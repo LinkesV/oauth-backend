@@ -74,7 +74,7 @@ app.get('/google',passport.authenticate("google",{ scope: ["profile"] }))
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/login/failed', failureMessage: true }),
 function(req, res) {
     res.writeHead(301, {
-        Location: `https://mellifluous-sorbet-281589.netlify.app/${req.user._id}`
+        Location: `https://mellifluous-sorbet-281589.netlify.app/id=${req.user._id}`
       }).end();
 });
 
