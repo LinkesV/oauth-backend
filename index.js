@@ -22,12 +22,13 @@ app.use(
 require('dotenv').config()
 const port = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL
+const MONGODB = process.env.MONGODB_ATLUS
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 const saltrounds = 10; //Bcrypt
-mongoose.connect("mongodb://0.0.0.0:27017/OauthUsers" , {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGODB , {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log('Connected to the database')
 })
