@@ -74,7 +74,7 @@ app.get('/google',passport.authenticate("google",{ scope: ["profile"] }))
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/login/failed', failureMessage: true }),
 function(req, res) {
     res.writeHead(301, {
-        Location: `http://localhost:3000/${req.user._id}`
+        Location: `https://mellifluous-sorbet-281589.netlify.app/${req.user._id}`
       }).end();
 });
 
@@ -88,7 +88,7 @@ app.get('/github',passport.authenticate('github',{ scope: ["profile"] }))
 app.get('/github/callback', passport.authenticate('github', { failureRedirect: '/login/failed', failureMessage: true }),
 function(req, res) {
     res.writeHead(301, {
-        Location: `http://localhost:3000/${req.user._id}`
+        Location: `https://mellifluous-sorbet-281589.netlify.app/${req.user._id}`
       }).end();
     
 });
@@ -102,7 +102,7 @@ app.get('/facebook',passport.authenticate('facebook',{ scope: ["profile"] }))
 app.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login/failed', failureMessage: true }),
 function(req, res) {
     res.writeHead(301, {
-        Location: `http://localhost:3000/${req.user._id}`
+        Location: `https://mellifluous-sorbet-281589.netlify.app/${req.user._id}`
       }).end();
     
 });
